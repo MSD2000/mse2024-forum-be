@@ -12,7 +12,7 @@ import lombok.Setter;
 public class ReplyEntity extends BaseEntity {
 
   @Column(unique = true)
-  private String text;
+  private String description;
 
   private String username;
 

@@ -74,6 +74,7 @@ public class TopicService {
         // Keep original topic marking fields
         newTopic.setId(topicEntity.getId());
         newTopic.setCreated(topicEntity.getCreated());
+        newTopic.setUser(topicEntity.getUser());
         if (newTopic.getUsername() == null) {
             newTopic.setUsername(topicEntity.getUsername());
         }

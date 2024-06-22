@@ -16,6 +16,7 @@ import java.util.List;
 // TODO: exception handling to not show backend errors
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 @RequiredArgsConstructor
 public class UserRest {
 

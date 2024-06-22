@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/topics")
+@CrossOrigin
 public class TopicRest {
   private final Logger LOGGER = LoggerFactory.getLogger(UserRest.class);
 

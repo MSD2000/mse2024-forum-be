@@ -64,7 +64,7 @@ public class ReplyService {
         return topic.get();
     }
 
-    public ReplyDto updateUser(long replyId, ReplyDto reply) {
+    public ReplyDto updateReply(long replyId, ReplyDto reply) {
         Optional<ReplyEntity> byiD = replyRepository.findById(replyId);
         if (byiD.isEmpty()) {
             throw new IllegalArgumentException(  "Reply not found: " + replyId);
@@ -72,6 +72,8 @@ public class ReplyService {
         ReplyEntity replyEntity = byiD.get();
         ReplyEntity updatedEntity = converter.toEntity(reply);
         updatedEntity.setId(replyEntity.getId());
+        updatedEntity.setTopic(replyEntity.getTopic());
+        updatedEntity.setUser(replyEntity.getUser());
         updatedEntity.setCreated(replyEntity.getCreated());
         ReplyEntity save = replyRepository.save(updatedEntity);
         return converter.toDto(save);

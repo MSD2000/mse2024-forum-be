@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/replies")
+@CrossOrigin
 public class ReplyRest {
   private final Logger LOGGER = LoggerFactory.getLogger(UserRest.class);
 
@@ -48,6 +49,6 @@ public class ReplyRest {
   @PutMapping(path = "/{replyId}", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<ReplyDto> updateReply(
           @PathVariable Long replyId, @RequestBody ReplyDto reply) {
-    return ResponseEntity.ok(replyService.updateUser(replyId, reply));
+    return ResponseEntity.ok(replyService.updateReply(replyId, reply));
   }
 }

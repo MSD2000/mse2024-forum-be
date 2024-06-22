@@ -11,14 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReplyDto {
-
-    // Input params
-    private String text;
+    private long id;
+    private String description;
     private String username;
     private Long topicId;
-
-    // Those are in order to return the timestamps of the created entities
     private Date created;
     private Date modified;
-
 }

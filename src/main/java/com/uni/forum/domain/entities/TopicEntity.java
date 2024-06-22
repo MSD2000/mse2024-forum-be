@@ -16,6 +16,12 @@ public class TopicEntity extends BaseEntity {
   @Column(unique = true)
   private String title;
 
+  @Column
+  private String description;
+
+  @Column
+  private int views;
+
   private String username;
 
   @Column
